@@ -10,14 +10,27 @@ This add-on provides a pgAdmin service for [DDEV](https://github.com/ddev/ddev/)
 
 Installation:
 
+For DDEV v1.23.5 or above run
+
+```sh
+ddev add-on get MurzNN/ddev-pgadmin
 ```
+
+For earlier versions of DDEV run
+
+```sh
 ddev get MurzNN/ddev-pgadmin
+```
+
+Then restart your project
+
+```sh
 ddev restart
 ```
 
 You can run pgAdmin easily with the command after installing this add-on:
 
-```
+```sh
 ddev pgadmin
 ```
 
