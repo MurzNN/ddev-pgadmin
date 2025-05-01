@@ -1,9 +1,7 @@
 {
-    "Servers":
-    {
-        "1":
-        {
-            "Name": "DDEV",
+    "Servers": {
+        "1": {
+            "Name": "ddev",
             "Group": "Servers",
             "Host": "db",
             "Port": 5432,

@@ -2,26 +2,28 @@ services:
   pgadmin:
     container_name: ddev-${DDEV_SITENAME}-pgadmin
     image: dpage/pgadmin4:latest
-    restart: "no"
+    restart: 'no'
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: $DDEV_APPROOT
     volumes:
-    - "pgadmin-data:/var/lib/pgadmin"
-    - "./pgadmin/servers.json:/pgadmin4/servers.json"
-    - "./pgadmin/.pgpass:/home/pgadmin/.pgpass" # TODO: set `chmod 600 /home/pgadmin/.pgpass && chown pgadmin /home/pgadmin/.pgpass`
+      - 'pgadmin-data:/var/lib/pgadmin'
+      - './pgadmin/servers.json:/pgadmin4/servers.json'
+      - './pgadmin/.pgpass:/home/pgadmin/.pgpass' # TODO: set `chmod 600 /home/pgadmin/.pgpass && chown pgadmin /home/pgadmin/.pgpass`
     expose:
-      - "80"
+      - '80'
     environment:
-    - VIRTUAL_HOST=pgadmin.$DDEV_HOSTNAME
-    - HTTP_EXPOSE=80:80
-    - HTTPS_EXPOSE=443:80
-    - PGADMIN_CONFIG_SERVER_MODE=False
-    - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
-    - PGADMIN_CONFIG_DESKTOP_USER=pgadmin@ddev.site
+      - VIRTUAL_HOST=pgadmin.$DDEV_HOSTNAME
+      - HTTP_EXPOSE=80:80
+      - HTTPS_EXPOSE=443:80
+      - PGADMIN_CONFIG_SERVER_MODE=False
+      - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
+      - PGADMIN_DEFAULT_EMAIL=ddev-pgadmin@example.com
+      - PGADMIN_DEFAULT_PASSWORD_FILE=/home/pgadmin/.pgpass
+      - PGADMIN_DISABLE_POSTFIX=1
     healthcheck:
       interval: 120s
-      timeout: 2s
+      timeout: 5s
       retries: 1
     depends_on:
       - db
