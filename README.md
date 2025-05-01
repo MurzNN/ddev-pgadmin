@@ -1,17 +1,13 @@
 [![tests](https://github.com/MurzNN/ddev-pgadmin/actions/workflows/tests.yml/badge.svg)](https://github.com/MurzNN/ddev-pgadmin/actions/workflows/tests.yml) ![project is maintained](https://img.shields.io/maintenance/yes/2024.svg)
 
-# ddev-pgadmin <!-- omit in toc -->
+# DDEV pgAdmin add-on<!-- omit in toc -->
 
-* [What is ddev-pgadmin?](#what-is-ddev-pgadmin)
+This is a [DDEV](https://github.com/ddev/ddev/) add-on provides a pgAdmin service for PostgreSQL databases.
 
-## What is ddev-pgadmin?
-
-This add-on provides a pgAdmin service for [DDEV](https://github.com/ddev/ddev/).
-
-Installation:
+## Installation:
 
 ```
-ddev get MurzNN/ddev-pgadmin
+ddev add-on get MurzNN/ddev-pgadmin
 ddev restart
 ```
 

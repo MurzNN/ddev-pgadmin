@@ -1,12 +1,9 @@
 name: pgadmin
 
 project_files:
-- docker-compose.pgadmin.yaml
-- pgadmin/servers.json
-- pgadmin/.pgpass
-- pgadmin/data/.gitkeep
-- commands/host/pgadmin
+  - docker-compose.pgadmin.yaml
+  - commands/host/pgadmin
 
 post_install_actions:
   - |
-    echo "You can now use 'ddev pgadmin' to launch pgAdmin"
+    echo "You can now use 'ddev pgadmin' to open pgAdmin"
