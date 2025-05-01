@@ -22,4 +22,8 @@ Also, it will be available on the url `https://pgadmin.yourprojectname.ddev.site
 > [!TIP]
 > For Gitpod: The `ddev pgadmin` command can open a blank page in preview mode, open the link in a new browser tab/window to make it work.
 
+# Tips
+
+- PgAdmin stores the initial configuration from the `server.json` in the internal database on the first start. So, if you make changes in the `servers.json` - delete the `pgadmin-data` Docker volume to apply changes.
+
 **Contributed and maintained by [@MurzNN](https://github.com/MurzNN)**
